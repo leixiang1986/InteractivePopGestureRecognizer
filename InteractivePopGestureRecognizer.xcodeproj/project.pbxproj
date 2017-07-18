@@ -13,6 +13,9 @@
 		D37748F51F1DA06B00BF0DBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37748F31F1DA06B00BF0DBD /* Main.storyboard */; };
 		D37748F71F1DA06B00BF0DBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37748F61F1DA06B00BF0DBD /* Assets.xcassets */; };
 		D37748FA1F1DA06B00BF0DBD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D37748F81F1DA06B00BF0DBD /* LaunchScreen.storyboard */; };
+		D37749031F1DA26F00BF0DBD /* PresentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D37749021F1DA26F00BF0DBD /* PresentedViewController.m */; };
+		D37749061F1DA52C00BF0DBD /* CustomNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D37749051F1DA52C00BF0DBD /* CustomNavigationVC.m */; };
+		D37749091F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D37749081F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,12 @@
 		D37748F61F1DA06B00BF0DBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D37748F91F1DA06B00BF0DBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D37748FB1F1DA06B00BF0DBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D37749011F1DA26F00BF0DBD /* PresentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentedViewController.h; sourceTree = "<group>"; };
+		D37749021F1DA26F00BF0DBD /* PresentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentedViewController.m; sourceTree = "<group>"; };
+		D37749041F1DA52C00BF0DBD /* CustomNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationVC.h; sourceTree = "<group>"; };
+		D37749051F1DA52C00BF0DBD /* CustomNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationVC.m; sourceTree = "<group>"; };
+		D37749071F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenPopPanNavigationVC.h; sourceTree = "<group>"; };
+		D37749081F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenPopPanNavigationVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +71,12 @@
 				D37748EE1F1DA06B00BF0DBD /* AppDelegate.m */,
 				D37748F01F1DA06B00BF0DBD /* ViewController.h */,
 				D37748F11F1DA06B00BF0DBD /* ViewController.m */,
+				D37749041F1DA52C00BF0DBD /* CustomNavigationVC.h */,
+				D37749051F1DA52C00BF0DBD /* CustomNavigationVC.m */,
+				D37749071F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.h */,
+				D37749081F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.m */,
+				D37749011F1DA26F00BF0DBD /* PresentedViewController.h */,
+				D37749021F1DA26F00BF0DBD /* PresentedViewController.m */,
 				D37748F31F1DA06B00BF0DBD /* Main.storyboard */,
 				D37748F61F1DA06B00BF0DBD /* Assets.xcassets */,
 				D37748F81F1DA06B00BF0DBD /* LaunchScreen.storyboard */,
@@ -152,8 +167,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D37748F21F1DA06B00BF0DBD /* ViewController.m in Sources */,
+				D37749031F1DA26F00BF0DBD /* PresentedViewController.m in Sources */,
 				D37748EF1F1DA06B00BF0DBD /* AppDelegate.m in Sources */,
+				D37749061F1DA52C00BF0DBD /* CustomNavigationVC.m in Sources */,
 				D37748EC1F1DA06B00BF0DBD /* main.m in Sources */,
+				D37749091F1DAAD900BF0DBD /* FullScreenPopPanNavigationVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +291,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W222R58V26;
 				INFOPLIST_FILE = InteractivePopGestureRecognizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okdeer.InteractivePopGestureRecognizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,6 +304,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = W222R58V26;
 				INFOPLIST_FILE = InteractivePopGestureRecognizer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.okdeer.InteractivePopGestureRecognizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";

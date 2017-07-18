@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2Yl-h7-5RN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--bootVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,159 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aff-B4-Aic">
+                                <rect key="frame" x="171" y="117" width="34" height="30"/>
+                                <state key="normal" title="push"/>
+                                <connections>
+                                    <segue destination="oOr-7f-yD9" kind="show" id="Nzh-8d-8Wo"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Rzg-Gk-bUn">
+                                <rect key="frame" x="16" y="167" width="343" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">CustomNavigationVC 自定义的导航控制器，添加返回按钮后，系统的边缘滑动返回会失效:解决方法是设置self.interactivePopGestureRecognizer.delegate = self;       - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
+    return self.viewControllers.count &gt; 1;
+}            
+FullScreenPopPanNavigationVC 是全屏滑动返回，实现方式是添加一个pan手势，手势的target是self.interactivePopGestureRecognizer.delegate（系统设置的），selector是通过打印self.interactivePopGestureRecognizer.delegate获取的。</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.79065485668789814" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Rzg-Gk-bUn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="0PG-Kj-X1d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Rzg-Gk-bUn" secondAttribute="trailing" id="GUr-LW-Nld"/>
+                            <constraint firstItem="Rzg-Gk-bUn" firstAttribute="top" secondItem="Aff-B4-Aic" secondAttribute="bottom" constant="20" id="K5q-QO-OPV"/>
+                            <constraint firstItem="Aff-B4-Aic" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="53" id="kJo-8h-2Jp"/>
+                            <constraint firstItem="Aff-B4-Aic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tdi-Df-Xa0"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Rzg-Gk-bUn" secondAttribute="bottom" constant="20" id="u1s-pH-qcN"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="bootVC" id="JOk-we-6EQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="657" y="82"/>
+        </scene>
+        <!--presentedVC-->
+        <scene sceneID="Q16-K8-QWy">
+            <objects>
+                <viewController title="presentedVC" id="oOr-7f-yD9" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0o-O9-ElX"/>
+                        <viewControllerLayoutGuide type="bottom" id="O4g-Qm-4oB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cAJ-Cx-Ugs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxt-KA-ceq">
+                                <rect key="frame" x="115" y="312" width="113" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="present"/>
+                                <connections>
+                                    <segue destination="Xx0-1v-Hid" kind="presentation" id="gkm-oV-2is"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.8432772691" blue="0.88199144110000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Oh-bC-XUZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1452" y="101.19940029985008"/>
+        </scene>
+        <!--presentedVC-->
+        <scene sceneID="zSL-Th-61a">
+            <objects>
+                <viewController id="GNI-9u-TTC" customClass="PresentedViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Giv-qE-ByE"/>
+                        <viewControllerLayoutGuide type="bottom" id="MqV-dt-p1m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vUJ-9s-0JD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="diz-3U-5Tn">
+                                <rect key="frame" x="162" y="261" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="push"/>
+                                <connections>
+                                    <segue destination="93o-xM-Yd0" kind="show" id="etX-wG-qBd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LPR-vd-CK5">
+                                <rect key="frame" x="145" y="320" width="71" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="dismiss"/>
+                                <connections>
+                                    <action selector="dismissal:" destination="GNI-9u-TTC" eventType="touchUpInside" id="vIA-27-BWy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.78503184709999996" green="0.91110171179999999" blue="0.91595342359999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="presentedVC" id="BEX-bu-LPf"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XbV-rC-3ki" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3063.1999999999998" y="98.50074962518741"/>
+        </scene>
+        <!--presentedPushedVC-->
+        <scene sceneID="g2Z-NI-3nW">
+            <objects>
+                <viewController title="presentedPushedVC" id="93o-xM-Yd0" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mxc-Lp-IeW"/>
+                        <viewControllerLayoutGuide type="bottom" id="AJK-Ml-DpD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hpV-Sr-dyb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93590764329999998" green="0.70810111460000003" blue="0.6870272691" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eao-Cz-Pf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3783.1999999999998" y="98.50074962518741"/>
+        </scene>
+        <!--Full Screen Pop Pan NavigationVC-->
+        <scene sceneID="9CJ-JA-BLg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xx0-1v-Hid" customClass="FullScreenPopPanNavigationVC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LIn-oV-Ru8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GNI-9u-TTC" kind="relationship" relationship="rootViewController" id="48r-c8-ZNx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9C1-54-2Z8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2124" y="98.50074962518741"/>
+        </scene>
+        <!--Full Screen Pop Pan NavigationVC-->
+        <scene sceneID="QOm-Sb-Ed1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2Yl-h7-5RN" customClass="FullScreenPopPanNavigationVC" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="euR-Ny-nDa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TgI-iD-p7J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gnN-wh-Zut" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135.19999999999999" y="107.49625187406298"/>
         </scene>
     </scenes>
 </document>
